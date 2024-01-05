@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISBN Redirect</title>
+</head>
+<body>
+
+<script>
+  // Get the current URL
+  var currentUrl = window.location.href;
+
+  // Extract ISBN from the current URL
+  var isbnMatch = currentUrl.match(/books\/(\d+)/);
+  if (isbnMatch && isbnMatch[1]) {
+    var isbn = isbnMatch[1];
+
+    // Construct the new redirected link
+    var redirectedLink = "https://gust.aafaqeducation.com/" + isbn;
+
+    // Redirect to the new link
+    window.location.href = redirectedLink;
+  } else {
+    console.error("ISBN not found in the URL.");
+  }
+</script>
+
+</body>
+</html>
